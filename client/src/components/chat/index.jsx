@@ -5,12 +5,14 @@ import {
     MultiChatWindow
 } from 'react-chat-engine-advanced'
 import Header from "@/components/header"
+import CustomForm from '@/components/messageForm/CustomForm'
+
 
 const Chat = () => {
     const chatProps = useMultiChatLogic(
         import.meta.env.VITE_PROJECT_ID,
-        "testuser",
-        "1234",
+        "newuser",
+        "123",
     )
   return (
     <div style={{ flexBasis: "100%" }}>
@@ -19,6 +21,11 @@ const Chat = () => {
             {...chatProps}
             style={{ height: "100vh" }}
             renderChatHeader={(chat) => <Header chat={chat} />}
+            renderMessageForm={(props) => {
+                return (
+                    <CustomForm  props={props} activeChat={chatProps.chat} />
+                )
+            }}
         />
     </div>
   )
