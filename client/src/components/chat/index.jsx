@@ -6,6 +6,7 @@ import {
 } from 'react-chat-engine-advanced'
 import Header from "@/components/header"
 import CustomForm from '@/components/messageForm/CustomForm'
+// import NewHeader from '../newhead'
 
 
 const Chat = () => {
@@ -17,6 +18,7 @@ const Chat = () => {
   return (
     <div style={{ flexBasis: "100%" }}>
         <MultiChatSocket {...chatProps} />
+        {/* <NewHeader/> */}
         <MultiChatWindow
             {...chatProps}
             style={{ height: "100vh" }}
